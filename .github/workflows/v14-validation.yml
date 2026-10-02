@@ -1,0 +1,29 @@
+name: v1.4 Closed-Loop Validation
+on:
+  push:
+    paths:
+      - ".github/workflows/v14-validation.yml"
+      - "tests/test-v14.mjs"
+      - "versions/v1.4/index.html"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: "22"}
+      - run: npm install playwright
+      - run: npx playwright install --with-deps chromium
+      - name: Execute LoftSims v1.4 tests
+        run: node tests/test-v14.mjs
+      - name: Commit test evidence
+        if: always()
+        run: |
+          git config user.name "LoftSims Evidence Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add versions/v1.4/test-evidence
+          git diff --cached --quiet || git commit -m "Add v1.4 closed-loop validation evidence"
+          git push
