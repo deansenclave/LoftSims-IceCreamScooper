@@ -1,6 +1,6 @@
 # v1.8 Validation
 
-Status: **IN VALIDATION**
+Status: **FAILED — visual evidence audit**
 
 ## Previous version failure — v1.7
 v1.7 automated assertions reported PASS, but the visual evidence audit failed:
@@ -17,3 +17,13 @@ v1.7 automated assertions reported PASS, but the visual evidence audit failed:
 
 ## Acceptance
 v1.8 remains unvalidated until all three gates pass for every test.
+
+
+## v1.8 visual audit result
+Gate 1 (programmatic): PASS — 32/32 assertions reported true.
+Gate 2 (evidence count): PASS — 32/32 named evidence files exist.
+Gate 3 (visual audit): **FAIL**.
+
+The individual evidence files were generated after the complete simulation had already run. Consequently, multiple different tests show the same final 61.9-second state rather than the state in which that assertion was exercised. Examples include `scoopUserMovable`, `contactBeforeCapture`, `releaseObserved`, `gravityObserved`, `scoopShapeFromContact`, `ballisticCatch`, and `bowlCarriesContents`. Their labels say result=true, but the displayed frame does not independently demonstrate the named behavior.
+
+v1.8 is frozen as FAILED. The evidence timing/trace defect is corrected only in v1.9.
