@@ -4,6 +4,8 @@
   "errors": [],
   "shots": [
     "01-initial-separated-world.png",
+    "01a-scoop-moved-integrity.png",
+    "01b-bowl-moved-integrity.png",
     "02-overlap-knowledge-check.png",
     "03-contact-before-capture.png",
     "04-cohesive-capture-and-cavity.png",
@@ -17,8 +19,12 @@
     "12-long-run-reality-state.png"
   ],
   "tests": {
+    "scoopUserMovable": false,
+    "scoopMoveFinite": true,
     "initialBowlHeapExclusion": true,
-    "smoothHeap": true,
+    "smoothHeap": false,
+    "bowlUserMovable": false,
+    "bowlMoveExclusion": true,
     "overlapDetector": true,
     "contactBeforeCapture": true,
     "releaseObserved": true,
@@ -29,6 +35,7 @@
     "missCanSpill": true,
     "ballisticCatch": true,
     "bowlCarriesContents": true,
+    "movedContentsRemainSupported": true,
     "dragCannotEnterHeap": true,
     "longRunFinite": true,
     "longRunMass": true,
