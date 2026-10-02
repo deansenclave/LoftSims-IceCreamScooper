@@ -10,7 +10,7 @@
     "06-gravity-fall.png",
     "07-first-natural-outcome.png",
     "08-deliberate-miss-no-attraction.png",
-    "09-natural-catch-or-miss.png",
+    "09-ballistic-catch-no-attraction.png",
     "10-bowl-content-translation.png",
     "11-bowl-heap-exclusion.png",
     "12-long-run-reality-state.png"
@@ -25,7 +25,8 @@
     "massConserved": true,
     "invariants": true,
     "missCanSpill": true,
-    "bowlCarriesContents": true,
+    "ballisticCatch": false,
+    "bowlCarriesContents": false,
     "dragCannotEnterHeap": true,
     "longRunFinite": true,
     "longRunMass": true,
@@ -98,6 +99,13 @@
     "dep": 0,
     "captured": 2
   },
+  "ballistic": {
+    "x": 507.85161467969493,
+    "y": 275.3519397480233,
+    "vx": -0.3553484549882354,
+    "vy": 0.7564181540813655
+  },
+  "predictedCatchX": 507.3872992136817,
   "final": {
     "captured": 12,
     "dep": 0,
@@ -147,5 +155,5 @@
       }
     ]
   },
-  "pass": true
+  "pass": false
 }
