@@ -33,11 +33,11 @@
     "noRealityViolation": true
   },
   "first": {
-    "captured": 2,
+    "captured": 1,
     "dep": 0,
     "spilled": 1,
     "fall": 0,
-    "account": 2,
+    "account": 1,
     "inv": [
       {
         "n": "K01 gravity downward",
@@ -80,38 +80,33 @@
         "ok": true
       }
     ],
-    "loadArea": 1735.0240734311158,
+    "loadArea": null,
     "cuts": [
       {
         "mx": 495.67765418048737,
         "w": 37.48825815477699,
         "d": 29.859225929730783
-      },
-      {
-        "mx": 387.41377504986013,
-        "w": 37.48825815477699,
-        "d": 29.859225929730776
       }
     ]
   },
   "miss": {
     "spilled": 1,
     "dep": 0,
-    "captured": 2
+    "captured": 1
   },
   "ballistic": {
-    "x": 512.5235265747555,
-    "y": 288.8267326034857,
-    "vx": -14.376458716862617,
-    "vy": 5.8935473888496
+    "x": 507.23642063379157,
+    "y": 261.31940727105683,
+    "vx": 14.323769747490493,
+    "vy": -0.1440104882221318
   },
-  "predictedCatchX": 494.9825167250815,
+  "predictedCatchX": 526.857479350039,
   "final": {
-    "captured": 12,
+    "captured": 11,
     "dep": 0,
-    "spilled": 11,
-    "fall": 0,
-    "account": 12,
+    "spilled": 10,
+    "fall": 1,
+    "account": 11,
     "inv": [
       {
         "n": "K01 gravity downward",
