@@ -24,7 +24,7 @@
     "releaseObserved": true,
     "gravityObserved": true,
     "massConserved": true,
-    "invariants": false,
+    "invariants": true,
     "evidenceFramesDistinct": false,
     "missCanSpill": true,
     "ballisticCatch": true,
@@ -32,8 +32,8 @@
     "dragCannotEnterHeap": true,
     "longRunFinite": true,
     "longRunMass": true,
-    "noRealityViolation": false,
-    "noPlaceholderRealityGates": false,
+    "noRealityViolation": true,
+    "noPlaceholderRealityGates": true,
     "depositSupportNoCoincidence": true
   },
   "first": {
@@ -65,7 +65,7 @@
       },
       {
         "n": "K06 smooth free surface",
-        "ok": false
+        "ok": true
       },
       {
         "n": "K07 cohesive scoopful",
@@ -139,7 +139,7 @@
       },
       {
         "n": "K06 smooth free surface",
-        "ok": false
+        "ok": true
       },
       {
         "n": "K07 cohesive scoopful",
@@ -151,7 +151,7 @@
       },
       {
         "n": "K09 no landing slots",
-        "ok": false
+        "ok": true
       },
       {
         "n": "K10 release continuity",
