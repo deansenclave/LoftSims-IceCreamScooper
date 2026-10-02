@@ -1,0 +1,26 @@
+name: v1.9 Three-Gate Validation
+on:
+  push:
+    paths: [".github/workflows/v19-validation.yml","tests/test-v19.mjs","versions/v1.9/index.html"]
+  workflow_dispatch:
+permissions: {contents: write}
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: "22"}
+      - run: npm install playwright
+      - run: npx playwright install --with-deps chromium
+      - name: Gate 1 full regression and Gate 2 test-time evidence
+        run: node tests/test-v19.mjs
+      - name: Commit v1.9 evidence whether pass or fail
+        if: always()
+        run: |
+          git config user.name "LoftSims Evidence Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add versions/v1.9/test-evidence
+          git diff --cached --quiet || git commit -m "Add v1.9 test evidence"
+          git pull --rebase origin main
+          git push
