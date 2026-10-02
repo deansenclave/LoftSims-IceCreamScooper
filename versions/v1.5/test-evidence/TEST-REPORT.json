@@ -25,8 +25,8 @@
     "massConserved": true,
     "invariants": true,
     "missCanSpill": true,
-    "ballisticCatch": false,
-    "bowlCarriesContents": false,
+    "ballisticCatch": true,
+    "bowlCarriesContents": true,
     "dragCannotEnterHeap": true,
     "longRunFinite": true,
     "longRunMass": true,
@@ -34,8 +34,8 @@
   },
   "first": {
     "captured": 1,
-    "dep": 0,
-    "spilled": 1,
+    "dep": 1,
+    "spilled": 0,
     "fall": 0,
     "account": 1,
     "inv": [
@@ -83,30 +83,30 @@
     "loadArea": null,
     "cuts": [
       {
-        "mx": 495.67765418048737,
-        "w": 37.48825815477699,
-        "d": 29.859225929730783
+        "mx": 532.6598569547851,
+        "w": 33.864066176156975,
+        "d": 26.97257361701073
       }
     ]
   },
   "miss": {
     "spilled": 1,
     "dep": 0,
-    "captured": 1
+    "captured": 2
   },
   "ballistic": {
-    "x": 507.23642063379157,
-    "y": 261.31940727105683,
-    "vx": 14.323769747490493,
-    "vy": -0.1440104882221318
+    "x": 548.7745543828391,
+    "y": 255.75065895218088,
+    "vx": 58.623436783362756,
+    "vy": -35.335293456256345
   },
-  "predictedCatchX": 526.857479350039,
+  "predictedCatchX": 642.6615206326499,
   "final": {
-    "captured": 11,
-    "dep": 0,
-    "spilled": 10,
+    "captured": 31,
+    "dep": 30,
+    "spilled": 0,
     "fall": 1,
-    "account": 11,
+    "account": 31,
     "inv": [
       {
         "n": "K01 gravity downward",
@@ -150,5 +150,5 @@
       }
     ]
   },
-  "pass": false
+  "pass": true
 }
