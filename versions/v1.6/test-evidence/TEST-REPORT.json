@@ -29,6 +29,8 @@
     "contactBeforeCapture": true,
     "releaseObserved": true,
     "gravityObserved": true,
+    "scoopShapeFromContact": true,
+    "noPerfectCircularProxy": true,
     "massConserved": true,
     "invariants": true,
     "evidenceFramesDistinct": true,
@@ -97,17 +99,17 @@
         "ok": true
       }
     ],
-    "loadArea": 1799.2416372038388,
+    "loadArea": 1392.8363040627003,
     "cuts": [
       {
         "mx": 527.7008300677084,
-        "w": 38.17572168453544,
-        "d": 30.406787482704452
+        "w": 33.477186331408156,
+        "d": 26.66442559251944
       },
       {
-        "mx": 490.33333333333337,
-        "w": 38.17572168453544,
-        "d": 30.406787482704452
+        "mx": 490.42857142857144,
+        "w": 33.58864996231297,
+        "d": 26.753205864048564
       }
     ]
   },
@@ -117,12 +119,12 @@
     "captured": 2
   },
   "ballistic": {
-    "x": 560.2995599999997,
-    "y": 315.0998533333334,
+    "x": 560.2886298592267,
+    "y": 316.0625305034528,
     "vx": 18,
     "vy": 6
   },
-  "predictedCatchX": 580.0465629242635,
+  "predictedCatchX": 579.9502904572026,
   "final": {
     "captured": 32,
     "dep": 0,
