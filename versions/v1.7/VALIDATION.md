@@ -1,23 +1,26 @@
-# v1.7 Validation Progress
+# v1.7 Validation
 
-Status: IN VALIDATION — not released.
+Status: **PASSED**
 
-## Why v1.7 exists
-v1.6 testing exposed visible and functional defects. Each failed iteration is retained as evidence rather than overwritten.
+## Result
+Full regression validation completed successfully in GitHub Actions run **#2 / 37067383202**.
 
-## Previous failure — v1.6 run #11
-Passed: bowl catch, bowl carry, moved-content support, gravity, conservation, heap smoothness, non-circular proxy gate, and K01–K10.
+- Test report identity: v1.7
+- JavaScript/page errors: none
+- All explicit regression assertions: PASS
+- K01–K10 reality checks: PASS
+- Shape-from-contact gate: PASS
+- Perfect-circle rejection gate: PASS
+- Bowl catch/carry/support: PASS
+- Gravity, conservation, contact transfer and long-run checks: PASS
 
-Failed:
-- `scoopShapeFromContact`
+## Evidence
+All generated evidence is contained in `versions/v1.7/test-evidence/`:
 
-Meaning: the release/catch correction worked, but the captured scoop geometry still did not vary enough from a synthetic regular shape.
+01 initial separated world; 01a moved scoop integrity; 01b moved bowl integrity; 02 overlap detection; 03 contact before capture; 04 cohesive capture/cavity; 05 release continuity; 06 gravity fall; 07 first natural outcome; 08 deliberate miss/no attraction; 09 ballistic catch/no attraction; 10 bowl-content translation; 11 bowl/heap exclusion; 12 long-run reality state; plus `TEST-REPORT.json`.
 
-## v1.7 correction
-- Preserve geometry derived from actual scoop/ice-cream contact.
-- Increase natural asymmetry of the captured mass.
-- Reduce vertical symmetry so the scoopful cannot resemble a manufactured disk/ellipse.
-- Keep the v1.6 bowl trajectory correction that passed run #11.
+## Development history
+v1.6 was not accepted after visual review exposed unacceptable scoop morphology and subsequent regression iterations failed. v1.7 replaced the circular proxy with contact-derived asymmetric scoop geometry and reran the complete suite with new version-contained evidence.
 
 ## Acceptance
-v1.7 is not accepted until the full automated suite passes and the generated visual evidence is inspected for the original shape/fall defects.
+v1.7 is the first version in this progression recorded as PASSED under the full-regression + version-contained-evidence rule.
