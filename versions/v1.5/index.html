@@ -8,7 +8,7 @@ function q(){return{rpm:+$('rpm').value,R:+$('radius').value,th:+$('thick').valu
 function front(){return 625}function baseY(Q){return 452-Q.h/100*405}
 function virgin(x,Q){let A=8+Q.h*.18;return baseY(Q)-A*.42*Math.sin((x-phase)*.014)-A*.18*Math.sin((x-phase)*.033+1)}
 function noseBlend(x,Q){let s=front()-125;if(x<=s)return virgin(x,Q);let u=(x-s)/125,e=u*u*(3-2*u);return virgin(s,Q)*(1-e)+448*e}
-function surface(x,Q){let y=noseBlend(x,Q);for(const c of cuts){let dx=x-c.x;if(Math.abs(dx)<c.w){let u=dx/c.w;y+=c.d*(1+Math.cos(Math.PI*u))/2}}return Math.min(448,Math.max(-10,y))}
+function surface(x,Q){let y=noseBlend(x,Q);for(const c of cuts){let dx=(x-phase)-c.mx;if(Math.abs(dx)<c.w){let u=dx/c.w;y+=c.d*(1+Math.cos(Math.PI*u))/2}}return Math.min(448,Math.max(-10,y))}
 function heapContains(x,y,Q){return x<=front()&&y>=surface(x,Q)&&y<=455}
 function heapSlopeMax(Q){let m=0;for(let x=20;x<front()-4;x+=4)m=Math.max(m,Math.abs((surface(x+4,Q)-surface(x,Q))/4));return m}
 function bowlRim(){return{x1:bowl.x-bowl.w/2,x2:bowl.x+bowl.w/2,y:bowl.y-bowl.h/2}}
@@ -19,7 +19,7 @@ function polyArea(p){let s=0;for(let i=0;i<p.length;i++){let j=(i+1)%p.length;s+
 function path(p){if(!p?.length)return;g.beginPath();g.moveTo(p[0].x,p[0].y);for(let i=1;i<p.length;i++)g.lineTo(p[i].x,p[i].y);g.closePath()}
 function scoopSamples(Q){let r=Q.R-Q.th-3,out=[];for(let yy=-r;yy<=r;yy+=6)for(let xx=-r;xx<=r;xx+=6){let rr=Math.hypot(xx,yy),ang=Math.atan2(yy,xx);if(rr<r&&rr>r*.38&&!(ang>-.30*Math.PI&&ang<.30*Math.PI)){let ca=Math.cos(a),sa=Math.sin(a),x=head.x+xx*ca-yy*sa,y=head.y+xx*sa+yy*ca;if(heapContains(x,y,Q))out.push({x,y})}}return out}
 function contourFromContact(Q,pts){let c=centroid(pts),area=pts.length*36,R=Math.min(Q.R-Q.th-4,Math.sqrt(area/Math.PI)*1.08),p=[];for(let i=0;i<32;i++){let th=2*Math.PI*i/32,sy=th<Math.PI?0.88:1.05;p.push({x:R*Math.cos(th),y:R*sy*Math.sin(th)})}return{local:p,area:polyArea(p),center:c}}
-function maybeScoop(Q){let pts=scoopSamples(Q);if(pts.length<8)return;contactSeen=true;if(!load&&lastCaptureTurn!==turn){let z=contourFromContact(Q,pts);load={id:++captured,col:Q.col,contour:z.local,removedArea:z.area,contactCenter:z.center};lastCaptureTurn=turn;cuts.push({x:z.center.x,w:Math.max(28,Math.sqrt(z.area)*.9),d:Math.min(Q.R*.7,z.area/(Math.max(28,Math.sqrt(z.area)*.9)*1.55))});}}
+function maybeScoop(Q){let pts=scoopSamples(Q);if(pts.length<8)return;contactSeen=true;if(!load&&lastCaptureTurn!==turn){let z=contourFromContact(Q,pts);load={id:++captured,col:Q.col,contour:z.local,removedArea:z.area,contactCenter:z.center};lastCaptureTurn=turn;cuts.push({mx:z.center.x-phase,w:Math.max(28,Math.sqrt(z.area)*.9),d:Math.min(Q.R*.7,z.area/(Math.max(28,Math.sqrt(z.area)*.9)*1.55))});}}
 function worldLoad(){if(!load)return[];let ca=Math.cos(a),sa=Math.sin(a);return load.contour.map(p=>({x:head.x+p.x*ca-p.y*sa,y:head.y+p.x*sa+p.y*ca}))}
 function maybeRelease(Q){if(!load)return;let deg=a*180/Math.PI%360;if(deg<260||deg>335)return;let pts=worldLoad(),c=centroid(pts),omega=Q.rpm*2*Math.PI/60,rx=c.x-head.x,ry=c.y-head.y;fall.push({id:load.id,points:pts,vx:-omega*ry,vy:omega*rx,col:load.col,removedArea:load.removedArea,lastCy:c.y});load=null;releaseSeen=true}
 function settle(f,Q){let c=centroid(f.points),by=bowlY(c.x);if(by===null)return false;let bottom=Math.max(...f.points.map(p=>p.y));if(bottom<by)return false;let dy=by-bottom;for(let p of f.points)p.y+=dy;deposits.push({id:f.id,points:f.points,col:f.col,removedArea:f.removedArea});return true}
