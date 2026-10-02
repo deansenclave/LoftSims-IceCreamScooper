@@ -30,7 +30,7 @@
     "releaseObserved": true,
     "gravityObserved": true,
     "massConserved": true,
-    "invariants": false,
+    "invariants": true,
     "evidenceFramesDistinct": true,
     "missCanSpill": true,
     "ballisticCatch": false,
@@ -45,7 +45,7 @@
     "iceCreamMeltPassive": true,
     "iceCreamNoSolidPenetration": true,
     "longRunMass": true,
-    "noRealityViolation": false,
+    "noRealityViolation": true,
     "noPlaceholderRealityGates": true,
     "depositSupportNoCoincidence": true
   },
@@ -78,7 +78,7 @@
       },
       {
         "n": "K06 smooth free surface",
-        "ok": false
+        "ok": true
       },
       {
         "n": "K07 cohesive scoopful",
@@ -105,7 +105,7 @@
         "d": 30.406787482704452
       },
       {
-        "mx": 489.3478260869565,
+        "mx": 490.33333333333337,
         "w": 38.17572168453544,
         "d": 30.406787482704452
       }
@@ -117,10 +117,10 @@
     "captured": 2
   },
   "ballistic": {
-    "x": 559.9999999999999,
-    "y": 315.1331377777778,
-    "vx": 1.2500520696862934e-13,
-    "vy": 8
+    "x": 560,
+    "y": 315.0832111111111,
+    "vx": -4.285892810353006e-14,
+    "vy": 5
   },
   "predictedCatchX": 560,
   "final": {
@@ -152,7 +152,7 @@
       },
       {
         "n": "K06 smooth free surface",
-        "ok": false
+        "ok": true
       },
       {
         "n": "K07 cohesive scoopful",
