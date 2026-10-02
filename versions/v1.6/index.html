@@ -8,7 +8,7 @@ function q(){return{rpm:+$('rpm').value,R:+$('radius').value,th:+$('thick').valu
 function front(){return 625}function baseY(Q){return 452-Q.h/100*405}
 function virgin(x,Q){let A=8+Q.h*.18;return baseY(Q)-A*.42*Math.sin((x-phase)*.014)-A*.18*Math.sin((x-phase)*.033+1)}
 function noseBlend(x,Q){let run=Math.max(180,Q.h*2.8),s=front()-run;if(x<=s)return virgin(x,Q);let u=Math.max(0,Math.min(1,(x-s)/run)),e=.5-.5*Math.cos(Math.PI*u);return virgin(s,Q)*(1-e)+448*e}
-function surface(x,Q){let y=noseBlend(x,Q);for(const c of cuts){let dx=(x-phase)-c.mx,ww=c.w*1.9;if(Math.abs(dx)<ww){let u=Math.abs(dx)/ww,e=.5+.5*Math.cos(Math.PI*u);y+=c.d*.62*e*e}}return Math.min(448,Math.max(-10,y))}
+function surface(x,Q){let y=noseBlend(x,Q);for(const c of cuts){let dx=(x-phase)-c.mx,ww=c.w*3.2;if(Math.abs(dx)<ww){let u=Math.abs(dx)/ww,e=.5+.5*Math.cos(Math.PI*u);y+=c.d*.38*e*e}}return Math.min(448,Math.max(-10,y))}
 function heapContains(x,y,Q){return x<=front()&&y>=surface(x,Q)&&y<=455}
 function heapSlopeMax(Q){let m=0;for(let x=20;x<front()-8;x+=4)m=Math.max(m,Math.abs((surface(x+4,Q)-surface(x-4,Q))/8));return m}
 function bowlRim(){return{x1:bowl.x-bowl.w/2,x2:bowl.x+bowl.w/2,y:bowl.y-bowl.h/2}}
