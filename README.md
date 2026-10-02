@@ -109,13 +109,26 @@ The v1.3 simulation code and test infrastructure are present. Generated v1.3 tes
 
 ### v1.7 — Full Regression + Version-Contained Evidence
 
-- Rebuilds the captured scoopful from actual scoop/ice-cream contact geometry rather than a circular proxy.
-- Retains the corrected physical release path and bowl interaction from the v1.6 development cycle.
-- Adds capture-time morphology checks.
-- Runs the complete regression suite for the version rather than inheriting previous passes.
-- Generates screenshots and `TEST-REPORT.json` into `versions/v1.7/test-evidence/`.
-- Uses `versions/v1.7/VALIDATION.md` to record the previous failure, correction, and acceptance status.
-- **Status: PASSED.** Full regression validation succeeded in GitHub Actions run **37067383202** with version-contained screenshots and `TEST-REPORT.json`.
+- Full regression and version-contained evidence were introduced.
+- The run passed its then-current automated gates.
+- Subsequent work strengthened the evidence-conformance requirement, so development continued beyond v1.7.
+
+### v1.8 — Evidence-Conformance Failure
+
+- Expanded the suite to **32 explicit tests** with **32 named evidence files** plus `TEST-REPORT.json`.
+- Programmatic result: **32/32 PASS**.
+- Evidence completeness result: **32/32 files present**.
+- Visual audit result: **FAIL**.
+- The audit found that many supposedly test-specific screenshots showed the same final **61.9-second** state. The labels reported the individual assertion result, but the image did not independently demonstrate the named behavior.
+- v1.8 is frozen as a **FAILED** development revision. See `versions/v1.8/VALIDATION.md`.
+
+### v1.9 — Test-Time Evidence Correction
+
+- Current development revision.
+- Corrects the v1.8 evidence-timing defect.
+- Evidence must be captured at the moment each test is exercised rather than generated from the final simulation state.
+- Movement and transition tests require **BEFORE + AFTER** evidence; state tests require evidence from the actual tested state.
+- v1.9 remains **IN VALIDATION** until the complete regression suite passes and every evidence item is visually checked against its named test.
 
 ## Release / Validation Rule
 
@@ -146,6 +159,9 @@ If any check or evidence review fails, that version remains a failed/development
 - v1.6 workflow: `.github/workflows/v16-validation.yml`
 - v1.7 full regression test: `tests/test-v17.mjs`
 - v1.7 workflow: `.github/workflows/v17-validation.yml`
+- v1.8 full regression/evidence: `versions/v1.8/test-evidence/`
+- v1.8 validation record: `versions/v1.8/VALIDATION.md`
+- v1.9 validation record: `versions/v1.9/VALIDATION.md`
 
 Expected v1.3 generated evidence location:
 
@@ -153,6 +169,8 @@ Expected v1.3 generated evidence location:
 
 ## Current Development Status
 
-Current development revision: **v1.7**
+Current development revision: **v1.9 — IN VALIDATION**
 
-v1.6 is not the accepted baseline because subsequent visual review exposed an unacceptable scoop-shape defect. v1.7 completed the full regression suite successfully in GitHub Actions run **37067383202**. Its test report identifies v1.7, all explicit assertions and K01–K10 pass, and the complete screenshot/report evidence set is stored under `versions/v1.7/test-evidence/`.
+**v1.8 is FAILED.** Its programmatic suite reported 32/32 passes and all 32 named evidence files existed, but visual review found that many files were captured from the same final simulation state and therefore did not prove their named tests.
+
+v1.9 exists specifically to correct that evidence-conformance failure. It cannot be marked PASSED until the full regression suite succeeds, correctly timed evidence is stored inside `versions/v1.9/`, and the evidence itself passes visual review.
