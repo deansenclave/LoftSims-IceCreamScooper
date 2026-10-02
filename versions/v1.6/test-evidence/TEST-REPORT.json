@@ -30,7 +30,7 @@
     "releaseObserved": true,
     "gravityObserved": true,
     "massConserved": true,
-    "invariants": false,
+    "invariants": true,
     "evidenceFramesDistinct": true,
     "missCanSpill": true,
     "ballisticCatch": true,
@@ -46,7 +46,7 @@
     "iceCreamMeltPassive": true,
     "iceCreamNoSolidPenetration": true,
     "longRunMass": true,
-    "noRealityViolation": false,
+    "noRealityViolation": true,
     "noPlaceholderRealityGates": true,
     "depositSupportNoCoincidence": true
   },
@@ -79,7 +79,7 @@
       },
       {
         "n": "K06 smooth free surface",
-        "ok": false
+        "ok": true
       },
       {
         "n": "K07 cohesive scoopful",
@@ -98,7 +98,7 @@
         "ok": true
       }
     ],
-    "loadArea": 975.9510413050027,
+    "loadArea": 975.9510413050026,
     "cuts": [
       {
         "mx": 527.7008300677084,
@@ -106,9 +106,9 @@
         "d": 22.39441944729808
       },
       {
-        "mx": 490,
+        "mx": 490.33333333333337,
         "w": 28.116193616082747,
-        "d": 22.394419447298088
+        "d": 22.394419447298084
       }
     ]
   },
@@ -153,7 +153,7 @@
       },
       {
         "n": "K06 smooth free surface",
-        "ok": false
+        "ok": true
       },
       {
         "n": "K07 cohesive scoopful",
@@ -173,5 +173,5 @@
       }
     ]
   },
-  "pass": false
+  "pass": true
 }
