@@ -29,7 +29,7 @@
     "dragCannotEnterHeap": true,
     "longRunFinite": true,
     "longRunMass": true,
-    "noRealityViolation": false
+    "noRealityViolation": true
   },
   "first": {
     "captured": 2,
@@ -79,16 +79,16 @@
         "ok": true
       }
     ],
-    "loadArea": 3502.6957324808536,
+    "loadArea": 4831.304458594281,
     "cuts": [
       {
-        "x": 495.9776541804874,
+        "mx": 495.67765418048737,
         "w": 62.816939726135026,
         "d": 42
       },
       {
-        "x": 492.66342277266426,
-        "w": 53.265218889154035,
+        "mx": 387.41377504986013,
+        "w": 62.556827057175525,
         "d": 42
       }
     ]
@@ -127,7 +127,7 @@
       },
       {
         "n": "K06 smooth free surface",
-        "ok": false
+        "ok": true
       },
       {
         "n": "K07 cohesive scoopful",
@@ -147,5 +147,5 @@
       }
     ]
   },
-  "pass": false
+  "pass": true
 }
