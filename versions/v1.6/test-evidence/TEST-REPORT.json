@@ -30,12 +30,11 @@
     "releaseObserved": true,
     "gravityObserved": true,
     "massConserved": true,
-    "invariants": true,
+    "invariants": false,
     "evidenceFramesDistinct": true,
     "missCanSpill": true,
-    "ballisticCatch": true,
-    "bowlCarriesContents": true,
-    "movedContentsRemainSupported": true,
+    "ballisticCatch": false,
+    "bowlCarriesContents": false,
     "dragCannotEnterHeap": true,
     "longRunFinite": true,
     "iceCreamCohesion": true,
@@ -46,14 +45,14 @@
     "iceCreamMeltPassive": true,
     "iceCreamNoSolidPenetration": true,
     "longRunMass": true,
-    "noRealityViolation": true,
+    "noRealityViolation": false,
     "noPlaceholderRealityGates": true,
     "depositSupportNoCoincidence": true
   },
   "first": {
     "captured": 2,
-    "dep": 1,
-    "spilled": 0,
+    "dep": 0,
+    "spilled": 1,
     "fall": 0,
     "account": 2,
     "inv": [
@@ -79,7 +78,7 @@
       },
       {
         "n": "K06 smooth free surface",
-        "ok": true
+        "ok": false
       },
       {
         "n": "K07 cohesive scoopful",
@@ -98,17 +97,17 @@
         "ok": true
       }
     ],
-    "loadArea": 975.9510413050026,
+    "loadArea": 1799.2416372038388,
     "cuts": [
       {
         "mx": 527.7008300677084,
-        "w": 28.116193616082743,
-        "d": 22.39441944729808
+        "w": 38.17572168453544,
+        "d": 30.406787482704452
       },
       {
-        "mx": 490.33333333333337,
-        "w": 28.116193616082747,
-        "d": 22.394419447298084
+        "mx": 489.3478260869565,
+        "w": 38.17572168453544,
+        "d": 30.406787482704452
       }
     ]
   },
@@ -118,17 +117,17 @@
     "captured": 2
   },
   "ballistic": {
-    "x": 546.6903416876262,
-    "y": 297.1313375008469,
-    "vx": 53.95586436621103,
-    "vy": -41.63864722779343
+    "x": 559.9999999999999,
+    "y": 315.1331377777778,
+    "vx": 1.2500520696862934e-13,
+    "vy": 8
   },
-  "predictedCatchX": 625.9077389678486,
+  "predictedCatchX": 560,
   "final": {
     "captured": 32,
-    "dep": 1,
-    "spilled": 29,
-    "fall": 1,
+    "dep": 0,
+    "spilled": 31,
+    "fall": 0,
     "account": 32,
     "inv": [
       {
@@ -153,7 +152,7 @@
       },
       {
         "n": "K06 smooth free surface",
-        "ok": true
+        "ok": false
       },
       {
         "n": "K07 cohesive scoopful",
@@ -173,5 +172,5 @@
       }
     ]
   },
-  "pass": true
+  "pass": false
 }
