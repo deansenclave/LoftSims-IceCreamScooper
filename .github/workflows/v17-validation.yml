@@ -1,0 +1,26 @@
+name: v1.7 Full Product Validation
+on:
+  push:
+    paths: [".github/workflows/v17-validation.yml","tests/test-v17.mjs","versions/v1.7/index.html"]
+  workflow_dispatch:
+permissions: {contents: write}
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: "22"}
+      - run: npm install playwright
+      - run: npx playwright install --with-deps chromium
+      - name: Execute complete v1.7 regression and evidence suite
+        run: node tests/test-v17.mjs
+      - name: Commit v1.7 evidence
+        if: always()
+        run: |
+          git config user.name "LoftSims Evidence Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add versions/v1.7/test-evidence
+          git diff --cached --quiet || git commit -m "Add v1.7 full-validation evidence"
+          git pull --rebase origin main
+          git push
