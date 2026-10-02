@@ -99,6 +99,39 @@ The v1.3 simulation code and test infrastructure are present. Generated v1.3 tes
 - Final GitHub Actions run **37064246082** passed all v1.5 knowledge-derived tests.
 - The generated evidence was visually inspected after the automated run; this visual gate caught and drove additional refinements before the final passing run.
 
+### v1.6 — Regression Expansion and Visual Failure Discovery
+
+- Expanded movable-object, material, gravity, conservation, bowl-support, and long-run checks.
+- Automated runs exposed multiple regressions during refinement.
+- A later user-visible review exposed unacceptable scoop morphology despite an earlier green run.
+- v1.6 is therefore retained as a development/diagnostic revision and is **not an accepted validated release**.
+- The failure history led to explicit shape checks that reject a perfect circular proxy and require contact-derived scoop geometry.
+
+### v1.7 — Full Regression + Version-Contained Evidence
+
+- Rebuilds the captured scoopful from actual scoop/ice-cream contact geometry rather than a circular proxy.
+- Retains the corrected physical release path and bowl interaction from the v1.6 development cycle.
+- Adds capture-time morphology checks.
+- Runs the complete regression suite for the version rather than inheriting previous passes.
+- Generates screenshots and `TEST-REPORT.json` into `versions/v1.7/test-evidence/`.
+- Uses `versions/v1.7/VALIDATION.md` to record the previous failure, correction, and acceptance status.
+- **Status: IN VALIDATION.** v1.7 is not accepted until every test passes and the generated evidence is reviewed for conformance with the tested scenario.
+
+## Release / Validation Rule
+
+Every progressive version is tested independently against the complete scenario suite. A previous version's successful tests are not inherited.
+
+A version can be marked **PASSED / validated** only when:
+
+1. every automated regression test succeeds;
+2. no required reality/invariant check fails during the tested scenarios;
+3. generated evidence corresponds to the scenario being asserted;
+4. all required evidence screenshots and the machine-readable test report are stored inside that version;
+5. the evidence is reviewed for visible defects that numerical checks can miss; and
+6. the version's validation document records the final result.
+
+If any check or evidence review fails, that version remains a failed/development revision. The failure and correction are documented and development continues in the next version.
+
 ## Test Infrastructure
 
 - v1.2 evidence capture: `tests/capture-v12-evidence.mjs`
@@ -109,6 +142,10 @@ The v1.3 simulation code and test infrastructure are present. Generated v1.3 tes
 - v1.4 workflow: `.github/workflows/v14-validation.yml`
 - v1.5 knowledge-derived test: `tests/test-v15.mjs`
 - v1.5 workflow: `.github/workflows/v15-validation.yml`
+- v1.6 regression test: `tests/test-v16.mjs`
+- v1.6 workflow: `.github/workflows/v16-validation.yml`
+- v1.7 full regression test: `tests/test-v17.mjs`
+- v1.7 workflow: `.github/workflows/v17-validation.yml`
 
 Expected v1.3 generated evidence location:
 
@@ -116,6 +153,6 @@ Expected v1.3 generated evidence location:
 
 ## Current Development Status
 
-Current development revision: **v1.5**
+Current development revision: **v1.7**
 
-v1.5 passed the defined executable knowledge/reality suite in GitHub Actions run **37064246082**, with evidence under `versions/v1.5/test-evidence/`. Validation is scoped to the encoded/tested knowledge; future real-world comparisons can expose additional missing knowledge and drive further refinement.
+v1.6 is not the accepted baseline because subsequent visual review exposed an unacceptable scoop-shape defect. v1.7 is undergoing complete regression validation with version-contained evidence. It will be marked validated only after the entire suite passes and the screenshots/report are checked against the scenarios they claim to prove.
