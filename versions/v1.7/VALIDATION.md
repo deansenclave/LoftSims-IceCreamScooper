@@ -1,9 +1,17 @@
 # v1.7 Validation
 
-Status: **PASSED**
+Status: **FAILED — evidence audit**
 
 ## Result
-Full regression validation completed successfully in GitHub Actions run **#2 / 37067383202**.
+The automated suite reported success in GitHub Actions run **#2 / 37067383202**, but subsequent visual inspection of the committed evidence invalidated release acceptance.
+
+## Visual evidence audit failure
+- Every screenshot visibly identifies the application as **v1.6**, not v1.7. Therefore the screenshots do not establish that the displayed product is v1.7.
+- `02-overlap-knowledge-check.png` visibly shows **FAIL K05 solid bowl excludes heap**. This directly contradicts a fully-passing reality state.
+- Only 14 screenshots exist for 32 automated assertions, so there is no one-to-one visual evidence for all 32 claimed passes.
+- Several screenshots are shared scenario states and cannot independently prove tests such as movement integrity or before/after translation without paired evidence.
+
+Under the project acceptance rule, these evidence defects make v1.7 FAILED. v1.7 is frozen; corrections belong to v1.8.
 
 - Test report identity: v1.7
 - JavaScript/page errors: none
