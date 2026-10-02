@@ -1,0 +1,74 @@
+{
+  "errors": [],
+  "checkpoints": [
+    {
+      "t": 5.999999999999984,
+      "angle": "360.0°",
+      "fill": "0%",
+      "captured": 1,
+      "bowl": 1,
+      "spilled": 0,
+      "falling": 0,
+      "violations": []
+    },
+    {
+      "t": 11.000000000000126,
+      "angle": "300.0°",
+      "fill": "0%",
+      "captured": 2,
+      "bowl": 2,
+      "spilled": 0,
+      "falling": 0,
+      "violations": []
+    },
+    {
+      "t": 21.00000000000009,
+      "angle": "180.0°",
+      "fill": "65%",
+      "captured": 4,
+      "bowl": 3,
+      "spilled": 0,
+      "falling": 0,
+      "violations": []
+    },
+    {
+      "t": 30.99999999999952,
+      "angle": "60.0°",
+      "fill": "0%",
+      "captured": 5,
+      "bowl": 5,
+      "spilled": 0,
+      "falling": 0,
+      "violations": []
+    },
+    {
+      "t": 45.99999999999867,
+      "angle": "240.0°",
+      "fill": "67%",
+      "captured": 8,
+      "bowl": 7,
+      "spilled": 0,
+      "falling": 0,
+      "violations": []
+    },
+    {
+      "t": 59.999999999997875,
+      "angle": "360.0°",
+      "fill": "0%",
+      "captured": 10,
+      "bowl": 10,
+      "spilled": 0,
+      "falling": 0,
+      "violations": []
+    }
+  ],
+  "final": {
+    "captured": 10,
+    "bowl": 10,
+    "spilled": 0,
+    "falling": 0,
+    "carried": 0,
+    "accounted": 10,
+    "violations": []
+  }
+}
