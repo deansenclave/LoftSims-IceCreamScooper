@@ -25,7 +25,7 @@
     "gravityObserved": true,
     "massConserved": true,
     "invariants": true,
-    "evidenceFramesDistinct": false,
+    "evidenceFramesDistinct": true,
     "missCanSpill": true,
     "ballisticCatch": true,
     "bowlCarriesContents": true,
@@ -159,5 +159,5 @@
       }
     ]
   },
-  "pass": false
+  "pass": true
 }
