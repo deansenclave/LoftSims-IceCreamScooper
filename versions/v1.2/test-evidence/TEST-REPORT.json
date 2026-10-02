@@ -1,0 +1,185 @@
+[
+  {
+    "test": "01-heap-geometry",
+    "label": "Continuous heap geometry and rounded leading face",
+    "targetSeconds": 0,
+    "state": {
+      "angle": "0.0°",
+      "fill": "0%",
+      "drops": "0",
+      "bowlFill": "0",
+      "elapsed": "0.0 s",
+      "falling": 0,
+      "deposits": 0,
+      "carrying": false
+    }
+  },
+  {
+    "test": "02-scoop-contact",
+    "label": "Scoop/heap contact",
+    "targetSeconds": 1.2,
+    "state": {
+      "angle": "72.0°",
+      "fill": "0%",
+      "drops": "0",
+      "bowlFill": "0",
+      "elapsed": "1.2 s",
+      "falling": 0,
+      "deposits": 0,
+      "carrying": false
+    }
+  },
+  {
+    "test": "03-progressive-fill",
+    "label": "Progressive scoop fill",
+    "targetSeconds": 2.4,
+    "state": {
+      "angle": "144.0°",
+      "fill": "56%",
+      "drops": "0",
+      "bowlFill": "0",
+      "elapsed": "2.4 s",
+      "falling": 0,
+      "deposits": 0,
+      "carrying": true
+    }
+  },
+  {
+    "test": "04-carried-contour",
+    "label": "Captured contour retained during rotation",
+    "targetSeconds": 3.6,
+    "state": {
+      "angle": "216.0°",
+      "fill": "69%",
+      "drops": "0",
+      "bowlFill": "0",
+      "elapsed": "3.6 s",
+      "falling": 0,
+      "deposits": 0,
+      "carrying": true
+    }
+  },
+  {
+    "test": "05-release",
+    "label": "Scoop release",
+    "targetSeconds": 4.8,
+    "state": {
+      "angle": "288.0°",
+      "fill": "0%",
+      "drops": "0",
+      "bowlFill": "0",
+      "elapsed": "4.8 s",
+      "falling": 1,
+      "deposits": 0,
+      "carrying": false
+    }
+  },
+  {
+    "test": "06-gravity-fall",
+    "label": "Gravity-driven falling contour",
+    "targetSeconds": 5.1,
+    "state": {
+      "angle": "306.0°",
+      "fill": "0%",
+      "drops": "0",
+      "bowlFill": "0",
+      "elapsed": "5.1 s",
+      "falling": 1,
+      "deposits": 0,
+      "carrying": false
+    }
+  },
+  {
+    "test": "07-bowl-capture",
+    "label": "Bowl capture",
+    "targetSeconds": 6.3,
+    "state": {
+      "angle": "18.0°",
+      "fill": "0%",
+      "drops": "1",
+      "bowlFill": "1",
+      "elapsed": "6.3 s",
+      "falling": 0,
+      "deposits": 1,
+      "carrying": false
+    }
+  },
+  {
+    "test": "08-first-scoop-stable",
+    "label": "First deposited scoop remains stable",
+    "targetSeconds": 7.5,
+    "state": {
+      "angle": "90.0°",
+      "fill": "42%",
+      "drops": "1",
+      "bowlFill": "1",
+      "elapsed": "7.5 s",
+      "falling": 0,
+      "deposits": 1,
+      "carrying": true
+    }
+  },
+  {
+    "test": "09-second-scoop-contact",
+    "label": "Second scoop contact without upward launch",
+    "targetSeconds": 12.5,
+    "state": {
+      "angle": "30.0°",
+      "fill": "0%",
+      "drops": "2",
+      "bowlFill": "2",
+      "elapsed": "12.5 s",
+      "falling": 0,
+      "deposits": 2,
+      "carrying": false
+    }
+  },
+  {
+    "test": "10-multiple-scoops-retained",
+    "label": "Multiple scoops retained",
+    "targetSeconds": 20,
+    "state": {
+      "angle": "120.0°",
+      "fill": "50%",
+      "drops": "3",
+      "bowlFill": "3",
+      "elapsed": "20.0 s",
+      "falling": 0,
+      "deposits": 3,
+      "carrying": true
+    }
+  },
+  {
+    "test": "11-melt-settlement",
+    "label": "Melt/settlement state",
+    "targetSeconds": 25,
+    "state": {
+      "angle": "60.0°",
+      "fill": "0%",
+      "drops": "4",
+      "bowlFill": "4",
+      "elapsed": "25.0 s",
+      "falling": 0,
+      "deposits": 4,
+      "carrying": false
+    }
+  },
+  {
+    "test": "12-long-run-stability",
+    "label": "Long-run stability",
+    "targetSeconds": 35,
+    "state": {
+      "angle": "300.0°",
+      "fill": "0%",
+      "drops": "5",
+      "bowlFill": "5",
+      "elapsed": "35.0 s",
+      "falling": 1,
+      "deposits": 5,
+      "carrying": false
+    }
+  },
+  {
+    "runtimeErrors": []
+  }
+]
