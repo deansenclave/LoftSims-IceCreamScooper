@@ -29,14 +29,15 @@
     "contactBeforeCapture": true,
     "releaseObserved": true,
     "gravityObserved": true,
-    "scoopShapeFromContact": true,
+    "scoopShapeFromContact": false,
     "noPerfectCircularProxy": true,
     "massConserved": true,
     "invariants": true,
     "evidenceFramesDistinct": true,
     "missCanSpill": true,
-    "ballisticCatch": false,
-    "bowlCarriesContents": false,
+    "ballisticCatch": true,
+    "bowlCarriesContents": true,
+    "movedContentsRemainSupported": true,
     "dragCannotEnterHeap": true,
     "longRunFinite": true,
     "iceCreamCohesion": true,
@@ -52,11 +53,11 @@
     "depositSupportNoCoincidence": true
   },
   "first": {
-    "captured": 2,
-    "dep": 0,
-    "spilled": 1,
+    "captured": 1,
+    "dep": 1,
+    "spilled": 0,
     "fall": 0,
-    "account": 2,
+    "account": 1,
     "inv": [
       {
         "n": "K01 gravity downward",
@@ -99,17 +100,12 @@
         "ok": true
       }
     ],
-    "loadArea": 1392.8363040627003,
+    "loadArea": null,
     "cuts": [
       {
         "mx": 527.7008300677084,
         "w": 33.477186331408156,
         "d": 26.66442559251944
-      },
-      {
-        "mx": 490.42857142857144,
-        "w": 33.58864996231297,
-        "d": 26.753205864048564
       }
     ]
   },
@@ -119,18 +115,18 @@
     "captured": 2
   },
   "ballistic": {
-    "x": 560.2886298592267,
+    "x": 560.904392081449,
     "y": 316.0625305034528,
-    "vx": 18,
+    "vx": 55,
     "vy": 6
   },
-  "predictedCatchX": 579.9502904572026,
+  "predictedCatchX": 620.9816883530422,
   "final": {
-    "captured": 32,
-    "dep": 0,
-    "spilled": 31,
-    "fall": 0,
-    "account": 32,
+    "captured": 31,
+    "dep": 1,
+    "spilled": 29,
+    "fall": 1,
+    "account": 31,
     "inv": [
       {
         "n": "K01 gravity downward",
