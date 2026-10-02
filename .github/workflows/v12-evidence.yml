@@ -1,0 +1,27 @@
+name: v1.2 Evidence Capture
+on:
+  push:
+    paths:
+      - '.github/workflows/v12-evidence.yml'
+      - 'tests/capture-v12-evidence.mjs'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install playwright
+      - run: npx playwright install --with-deps chromium
+      - run: node tests/capture-v12-evidence.mjs
+      - name: Commit full-resolution evidence
+        run: |
+          git config user.name "LoftSims Evidence Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add versions/v1.2/test-evidence
+          git diff --cached --quiet || git commit -m "Add full-resolution v1.2 per-fix test evidence"
+          git push
