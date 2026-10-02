@@ -1,10 +1,6 @@
 # v2.4 Validation
-Status: **IN VALIDATION**
+Status: **FAILED — frozen**
 
-Fresh review/refactor after v2.3 failure:
-- K10 has one responsibility: released matter remains continuously accounted for.
-- Boundary integrity is now an independent regression/evidence case.
-- Existing movement, material, support, conservation and reality checks remain.
-- Visual evidence remains final acceptance authority.
+Fresh regression run 37072736885 isolated one failure: boundaryIntegrity. K01-K10 all passed, including corrected K10.
 
-Acceptance requires every regression case to pass, adequate evidence for every case, and a documented visual PASS with retained audit evidence for every case.
+Fresh review found the floor-spill lifecycle allowed a falling contour to cross y=455 before it was removed. v2.5 replaces that lifecycle with an explicit floor collision: when the contour first reaches the floor it is clamped to the boundary and removed from the active falling state. This prevents a visually impossible below-floor frame.
