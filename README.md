@@ -115,7 +115,7 @@ The v1.3 simulation code and test infrastructure are present. Generated v1.3 tes
 - Runs the complete regression suite for the version rather than inheriting previous passes.
 - Generates screenshots and `TEST-REPORT.json` into `versions/v1.7/test-evidence/`.
 - Uses `versions/v1.7/VALIDATION.md` to record the previous failure, correction, and acceptance status.
-- **Status: IN VALIDATION.** v1.7 is not accepted until every test passes and the generated evidence is reviewed for conformance with the tested scenario.
+- **Status: PASSED.** Full regression validation succeeded in GitHub Actions run **37067383202** with version-contained screenshots and `TEST-REPORT.json`.
 
 ## Release / Validation Rule
 
@@ -155,4 +155,4 @@ Expected v1.3 generated evidence location:
 
 Current development revision: **v1.7**
 
-v1.6 is not the accepted baseline because subsequent visual review exposed an unacceptable scoop-shape defect. v1.7 is undergoing complete regression validation with version-contained evidence. It will be marked validated only after the entire suite passes and the screenshots/report are checked against the scenarios they claim to prove.
+v1.6 is not the accepted baseline because subsequent visual review exposed an unacceptable scoop-shape defect. v1.7 completed the full regression suite successfully in GitHub Actions run **37067383202**. Its test report identifies v1.7, all explicit assertions and K01–K10 pass, and the complete screenshot/report evidence set is stored under `versions/v1.7/test-evidence/`.
