@@ -5,6 +5,10 @@
   "shots": [
     "01-initial-separated-world.png",
     "02-overlap-knowledge-check.png",
+    "03-contact-before-capture.png",
+    "04-cohesive-capture-and-cavity.png",
+    "05-release-continuity.png",
+    "06-gravity-fall.png",
     "07-first-natural-outcome.png",
     "08-deliberate-miss-no-attraction.png",
     "09-ballistic-catch-no-attraction.png",
@@ -16,28 +20,28 @@
     "initialBowlHeapExclusion": true,
     "smoothHeap": true,
     "overlapDetector": true,
-    "contactBeforeCapture": false,
-    "releaseObserved": false,
-    "gravityObserved": false,
+    "contactBeforeCapture": true,
+    "releaseObserved": true,
+    "gravityObserved": true,
     "massConserved": true,
-    "invariants": true,
+    "invariants": false,
     "evidenceFramesDistinct": false,
-    "missCanSpill": false,
-    "ballisticCatch": false,
-    "bowlCarriesContents": false,
+    "missCanSpill": true,
+    "ballisticCatch": true,
+    "bowlCarriesContents": true,
     "dragCannotEnterHeap": true,
     "longRunFinite": true,
     "longRunMass": true,
-    "noRealityViolation": true,
-    "noPlaceholderRealityGates": true,
+    "noRealityViolation": false,
+    "noPlaceholderRealityGates": false,
     "depositSupportNoCoincidence": true
   },
   "first": {
-    "captured": 0,
-    "dep": 0,
+    "captured": 2,
+    "dep": 1,
     "spilled": 0,
     "fall": 0,
-    "account": 0,
+    "account": 2,
     "inv": [
       {
         "n": "K01 gravity downward",
@@ -61,7 +65,7 @@
       },
       {
         "n": "K06 smooth free surface",
-        "ok": true
+        "ok": false
       },
       {
         "n": "K07 cohesive scoopful",
@@ -80,27 +84,38 @@
         "ok": true
       }
     ],
-    "loadArea": null,
-    "cuts": []
+    "loadArea": 975.9510413050027,
+    "cuts": [
+      {
+        "mx": 527.7008300677084,
+        "w": 28.116193616082743,
+        "d": 22.39441944729808
+      },
+      {
+        "mx": 491.20000000000005,
+        "w": 28.116193616082747,
+        "d": 22.394419447298088
+      }
+    ]
   },
   "miss": {
-    "spilled": 0,
+    "spilled": 1,
     "dep": 0,
-    "captured": 0
+    "captured": 2
   },
   "ballistic": {
-    "x": null,
-    "y": null,
-    "vx": null,
-    "vy": null
+    "x": 546.6903416876262,
+    "y": 297.1313375008469,
+    "vx": 53.95586436621103,
+    "vy": -41.63864722779343
   },
-  "predictedCatchX": null,
+  "predictedCatchX": 625.9077389678486,
   "final": {
-    "captured": 0,
-    "dep": 0,
-    "spilled": 0,
-    "fall": 0,
-    "account": 0,
+    "captured": 32,
+    "dep": 1,
+    "spilled": 29,
+    "fall": 1,
+    "account": 32,
     "inv": [
       {
         "n": "K01 gravity downward",
@@ -124,7 +139,7 @@
       },
       {
         "n": "K06 smooth free surface",
-        "ok": true
+        "ok": false
       },
       {
         "n": "K07 cohesive scoopful",
@@ -136,7 +151,7 @@
       },
       {
         "n": "K09 no landing slots",
-        "ok": true
+        "ok": false
       },
       {
         "n": "K10 release continuity",
