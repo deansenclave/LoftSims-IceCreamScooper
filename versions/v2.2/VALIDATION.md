@@ -1,8 +1,8 @@
 # v2.2 Validation
-Status: **IN VALIDATION**
+Status: **FAILED — frozen**
 
-v2.1 restored valid bowl catching but failed K10 at the long-run checkpoint while a legitimate scoop was still active/in flight.
+Fresh full regression run: 37071267674.
 
-v2.2 corrects release-continuity accounting so active cohesive matter remains part of the continuity state rather than being treated as disappeared.
+Evidence capture completed, but two checks failed: noRealityViolation and noPlaceholderRealityGates. Final live K10 release continuity was false while one cohesive body was still in flight.
 
-Acceptance still requires a fresh 32-test regression, complete evidence, and 32/32 visual PASS.
+The attempted v2.2 correction did not change the effective K10 accounting. v2.2 is frozen. v2.3 replaces the boolean presence check with explicit matter-state conservation across load + fall + deposits + spilled.
