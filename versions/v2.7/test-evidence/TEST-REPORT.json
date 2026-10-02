@@ -1,0 +1,279 @@
+{
+  "version": "v2.7",
+  "evidenceMap": {
+    "scoopUserMovable": [
+      "01-scoopUserMovable-before.png",
+      "01-scoopUserMovable-after.png"
+    ],
+    "scoopMoveFinite": [
+      "02-scoopMoveFinite-state.png"
+    ],
+    "initialBowlHeapExclusion": [
+      "03-initialBowlHeapExclusion-state.png"
+    ],
+    "smoothHeap": [
+      "04-smoothHeap-state.png"
+    ],
+    "bowlUserMovable": [
+      "05-bowlUserMovable-before.png",
+      "05-bowlUserMovable-after.png"
+    ],
+    "bowlMoveExclusion": [
+      "06-bowlMoveExclusion-state.png"
+    ],
+    "overlapDetector": [
+      "07-overlapDetector-state.png"
+    ],
+    "contactBeforeCapture": [
+      "08-contactBeforeCapture-contact.png"
+    ],
+    "scoopShapeFromContact": [
+      "09-scoopShapeFromContact-state.png"
+    ],
+    "noPerfectCircularProxy": [
+      "10-noPerfectCircularProxy-state.png"
+    ],
+    "releaseObserved": [
+      "11-releaseObserved-release.png"
+    ],
+    "gravityObserved": [
+      "12-gravityObserved-fall.png"
+    ],
+    "massConserved": [
+      "13-massConserved-state.png"
+    ],
+    "invariants": [
+      "14-invariants-state.png"
+    ],
+    "missCanSpill": [
+      "15-missCanSpill-state.png"
+    ],
+    "ballisticCatch": [
+      "16-ballisticCatch-state.png"
+    ],
+    "bowlCarriesContents": [
+      "17-bowlCarriesContents-before.png",
+      "17-bowlCarriesContents-after.png"
+    ],
+    "movedContentsRemainSupported": [
+      "18-movedContentsRemainSupported-state.png"
+    ],
+    "dragCannotEnterHeap": [
+      "19-dragCannotEnterHeap-state.png"
+    ],
+    "boundaryIntegrity": [
+      "20-boundaryIntegrity-state.png"
+    ],
+    "longRunFinite": [
+      "21-longRunFinite-state.png"
+    ],
+    "iceCreamCohesion": [
+      "22-iceCreamCohesion-state.png"
+    ],
+    "iceCreamNoRigidTeleport": [
+      "23-iceCreamNoRigidTeleport-state.png"
+    ],
+    "iceCreamGravityResponse": [
+      "24-iceCreamGravityResponse-state.png"
+    ],
+    "iceCreamMassConservation": [
+      "25-iceCreamMassConservation-state.png"
+    ],
+    "iceCreamContactTransfer": [
+      "26-iceCreamContactTransfer-state.png"
+    ],
+    "iceCreamMeltPassive": [
+      "27-iceCreamMeltPassive-state.png"
+    ],
+    "iceCreamNoSolidPenetration": [
+      "28-iceCreamNoSolidPenetration-state.png"
+    ],
+    "longRunMass": [
+      "29-longRunMass-state.png"
+    ],
+    "noRealityViolation": [
+      "30-noRealityViolation-state.png"
+    ],
+    "noPlaceholderRealityGates": [
+      "31-noPlaceholderRealityGates-state.png"
+    ],
+    "depositSupportNoCoincidence": [
+      "32-depositSupportNoCoincidence-state.png"
+    ],
+    "evidenceFramesDistinct": [
+      "33-evidenceFramesDistinct-state.png"
+    ]
+  },
+  "evidenceComplete": false,
+  "validation": "knowledge-derived reality + visual evidence",
+  "errors": [],
+  "shots": [
+    "01-initial-separated-world.png",
+    "01a-scoop-moved-integrity.png",
+    "01b-bowl-moved-integrity.png",
+    "02-overlap-knowledge-check.png",
+    "03-contact-before-capture.png",
+    "04-cohesive-capture-and-cavity.png",
+    "05-release-continuity.png",
+    "06-gravity-fall.png",
+    "07-first-natural-outcome.png",
+    "08-deliberate-miss-no-attraction.png",
+    "09-ballistic-catch-no-attraction.png",
+    "10-bowl-content-translation.png",
+    "11-bowl-heap-exclusion.png",
+    "12-long-run-reality-state.png"
+  ],
+  "tests": {
+    "scoopUserMovable": true,
+    "scoopMoveFinite": true,
+    "initialBowlHeapExclusion": true,
+    "smoothHeap": true,
+    "bowlUserMovable": true,
+    "bowlMoveExclusion": true,
+    "overlapDetector": true,
+    "contactBeforeCapture": true,
+    "releaseObserved": true,
+    "gravityObserved": true,
+    "scoopShapeFromContact": true,
+    "noPerfectCircularProxy": true,
+    "massConserved": true,
+    "invariants": true,
+    "evidenceFramesDistinct": true,
+    "missCanSpill": true,
+    "ballisticCatch": false,
+    "bowlCarriesContents": false,
+    "dragCannotEnterHeap": true,
+    "longRunFinite": true,
+    "iceCreamCohesion": true,
+    "iceCreamNoRigidTeleport": true,
+    "iceCreamGravityResponse": true,
+    "iceCreamMassConservation": true,
+    "iceCreamContactTransfer": true,
+    "iceCreamMeltPassive": true,
+    "iceCreamNoSolidPenetration": true,
+    "longRunMass": true,
+    "noRealityViolation": true,
+    "noPlaceholderRealityGates": true,
+    "boundaryIntegrity": true,
+    "depositSupportNoCoincidence": true
+  },
+  "first": {
+    "captured": 1,
+    "dep": 0,
+    "spilled": 1,
+    "fall": 0,
+    "account": 1,
+    "inv": [
+      {
+        "n": "K01 gravity downward",
+        "ok": true
+      },
+      {
+        "n": "K02 finite/no teleport",
+        "ok": true
+      },
+      {
+        "n": "K03 matter conserved",
+        "ok": true
+      },
+      {
+        "n": "K04 capture requires contact",
+        "ok": true
+      },
+      {
+        "n": "K05 solid bowl excludes heap",
+        "ok": true
+      },
+      {
+        "n": "K06 smooth free surface",
+        "ok": true
+      },
+      {
+        "n": "K07 cohesive scoopful",
+        "ok": true
+      },
+      {
+        "n": "K08 no bowl attraction",
+        "ok": true
+      },
+      {
+        "n": "K09 no landing slots",
+        "ok": true
+      },
+      {
+        "n": "K10 release continuity",
+        "ok": true
+      }
+    ],
+    "loadArea": null,
+    "cuts": [
+      {
+        "mx": 527.7008300677084,
+        "w": 34.54796093868829,
+        "d": 27.517292663232407
+      }
+    ]
+  },
+  "miss": {
+    "spilled": 1,
+    "dep": 0,
+    "captured": 1
+  },
+  "ballistic": {
+    "x": 560.9673239616856,
+    "y": 315.50440695238234,
+    "vx": 55,
+    "vy": 6
+  },
+  "predictedCatchX": 621.1959371879562,
+  "final": {
+    "captured": 31,
+    "dep": 0,
+    "spilled": 31,
+    "fall": 0,
+    "account": 31,
+    "inv": [
+      {
+        "n": "K01 gravity downward",
+        "ok": true
+      },
+      {
+        "n": "K02 finite/no teleport",
+        "ok": true
+      },
+      {
+        "n": "K03 matter conserved",
+        "ok": true
+      },
+      {
+        "n": "K04 capture requires contact",
+        "ok": true
+      },
+      {
+        "n": "K05 solid bowl excludes heap",
+        "ok": true
+      },
+      {
+        "n": "K06 smooth free surface",
+        "ok": true
+      },
+      {
+        "n": "K07 cohesive scoopful",
+        "ok": true
+      },
+      {
+        "n": "K08 no bowl attraction",
+        "ok": true
+      },
+      {
+        "n": "K09 no landing slots",
+        "ok": true
+      },
+      {
+        "n": "K10 release continuity",
+        "ok": true
+      }
+    ]
+  },
+  "pass": false
+}
