@@ -75,12 +75,40 @@ v1.3 changes the simulation from outcome-oriented placement to knowledge-constra
 
 The v1.3 simulation code and test infrastructure are present. Generated v1.3 test screenshots/results have **not yet been committed**, so v1.3 must not be described as test-validated until those results exist and are reviewed.
 
+
+
+### v1.4 — Bowl-Containment Revision
+
+- Added rigid translation of already-supported bowl contents when the bowl is dragged.
+- Added evidence-producing functional validation.
+- Automated assertions passed, but later visual/prior-knowledge review exposed a physically impossible bowl/heap overlap, an artificial heap cliff, and weak capture geometry.
+- v1.4 is therefore preserved as a development revision, not treated as reality-validated.
+
+### v1.5 — Knowledge-Derived Reality Validation
+
+- Added solid-body bowl/heap exclusion.
+- Reworked the heap nose into a smooth cohesive free surface.
+- Bound scoop cavities to moving heap material coordinates rather than fixed screen coordinates.
+- Limited capture to one physical scoop event per rotation.
+- Derived captured-mass position from actual scoop/heap contact so release momentum comes from the mass offset from the rotation axis.
+- Changed release to a gravity-facing scoop orientation rather than a bowl-directed velocity.
+- Added real ballistic miss and catch tests: misses spill; catches require actual trajectory/bowl intersection.
+- Added deposit support, bowl overflow behavior, and non-coincident deposit validation.
+- Added executable reality gates for gravity, finite geometry/no teleportation, conservation, contact-before-capture, solid exclusion, free-surface/cavity slope, cohesive capture, no attraction, no landing slots, and release continuity.
+- Added 12 per-behavior evidence screenshots plus `TEST-REPORT.json`.
+- Final GitHub Actions run **37064246082** passed all v1.5 knowledge-derived tests.
+- The generated evidence was visually inspected after the automated run; this visual gate caught and drove additional refinements before the final passing run.
+
 ## Test Infrastructure
 
 - v1.2 evidence capture: `tests/capture-v12-evidence.mjs`
 - v1.2 workflow: `.github/workflows/v12-evidence.yml`
 - v1.3 reality-invariant test: `tests/test-v13.mjs`
 - v1.3 workflow: `.github/workflows/v13-reality-test.yml`
+- v1.4 closed-loop test: `tests/test-v14.mjs`
+- v1.4 workflow: `.github/workflows/v14-validation.yml`
+- v1.5 knowledge-derived test: `tests/test-v15.mjs`
+- v1.5 workflow: `.github/workflows/v15-validation.yml`
 
 Expected v1.3 generated evidence location:
 
@@ -88,6 +116,6 @@ Expected v1.3 generated evidence location:
 
 ## Current Development Status
 
-Current development revision: **v1.3**
+Current development revision: **v1.5**
 
-The immediate validation gate is to execute the v1.3 reality-invariant tests, generate full-resolution per-behavior evidence, inspect the resulting trajectories and bowl interaction, and only then mark the revision as validated.
+v1.5 passed the defined executable knowledge/reality suite in GitHub Actions run **37064246082**, with evidence under `versions/v1.5/test-evidence/`. Validation is scoped to the encoded/tested knowledge; future real-world comparisons can expose additional missing knowledge and drive further refinement.
