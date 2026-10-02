@@ -1,10 +1,17 @@
 # v2.1 Validation
-Status: **IN VALIDATION**
+Status: **FAILED — frozen**
 
-## v2.0 failure
-The new boundary protection removed a falling scoop as soon as its lowest point touched y=455. That happened before the bowl-intersection logic could complete a valid catch, causing ballisticCatch and bowlCarriesContents to fail.
+## v2.0 correction carried into v2.1
+Premature floor-spill classification was relaxed so a valid bowl intersection could complete before a falling scoop was classified as spilled.
 
-## v2.1 correction
-A falling scoop is now classified as floor-spilled only after the complete cohesive contour has passed the floor boundary. Bowl intersection remains evaluated first. This preserves the boundary fix without prematurely deleting a valid bowl-crossing trajectory.
+## Full rerun result
+The full suite was rerun from zero.
+- ballisticCatch: PASS
+- bowlCarriesContents: PASS
+- noRealityViolation: FAIL
+- noPlaceholderRealityGates: FAIL
+- final live K10 release continuity: FAIL
 
-Full 32-test regression, evidence capture, and 32/32 visual audit are required before acceptance.
+At the long-run checkpoint one scoop remained in flight while 29 had spilled and one was deposited. The existing K10 formula incorrectly required every historical release to have already reached deposit/spill accounting, so it generated a false live failure while a legitimate falling body was still active.
+
+v2.1 is frozen. Correction moves to v2.2.
