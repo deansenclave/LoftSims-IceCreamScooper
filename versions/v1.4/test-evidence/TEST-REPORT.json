@@ -1,0 +1,87 @@
+{
+  "version": "v1.4",
+  "errors": [],
+  "shots": [
+    "01-initial-world.png",
+    "02-scoop-contact.png",
+    "03-progressive-fill.png",
+    "04-carried-contour.png",
+    "05-release.png",
+    "06-gravity-fall.png",
+    "07-natural-bowl-capture.png",
+    "08-first-scoop-stable.png",
+    "09-bowl-moved-with-contents.png",
+    "10-second-cycle-result.png",
+    "11-post-settlement-stability.png",
+    "12-long-run-state.png"
+  ],
+  "landing": {
+    "t": 5.099999999999987,
+    "captured": 1,
+    "bowl": 1,
+    "spilled": 0,
+    "falling": 0,
+    "violations": []
+  },
+  "bowlMovement": {
+    "before": {
+      "b": {
+        "x": 620,
+        "y": 420
+      },
+      "d": [
+        {
+          "x": 524.3939174246386,
+          "y": 335.8694207953122
+        }
+      ],
+      "sx": 647.1896875,
+      "sy": 583
+    },
+    "after": {
+      "b": {
+        "x": 721.1106470290852,
+        "y": 455
+      },
+      "d": [
+        {
+          "x": 625.504564453724,
+          "y": 370.86942079531224
+        }
+      ]
+    },
+    "bowlDelta": {
+      "x": 101.11064702908516,
+      "y": 35
+    },
+    "depositDeltas": [
+      {
+        "x": 101.11064702908538,
+        "y": 35.00000000000006
+      }
+    ],
+    "pass": true
+  },
+  "final": {
+    "t": 47.08333333333194,
+    "captured": 8,
+    "bowl": 1,
+    "spilled": 6,
+    "falling": 1,
+    "carried": 0,
+    "accounted": 8,
+    "violations": []
+  },
+  "tests": {
+    "runtimeNoErrors": true,
+    "naturalLanding": true,
+    "bowlCarriesContents": true,
+    "massAccounted": true,
+    "noInvariantViolations": true,
+    "contactObserved": true,
+    "progressiveFillObserved": true,
+    "releaseObserved": true,
+    "gravityFallObserved": true
+  },
+  "pass": true
+}
